@@ -3,11 +3,7 @@ const { test, expect, chromium } = require("@playwright/test");
 const { email, password, invalidEmail, invalidPassword } = require("../user");
 
 test("Right authorization", async ({ page }) => {
-  const browser = await chromium.launch({
-    headless: false,
-    slowMo: 5000,
-    devtools: true,
-  });
+  const browser = await chromium.launch({});
 
   await page.goto("https://netology.ru/");
   await page.getByRole("link", { name: "Войти" }).click();
@@ -21,11 +17,7 @@ test("Right authorization", async ({ page }) => {
 });
 
 test("Wrong authorization", async ({ page }) => {
-  const browser = await chromium.launch({
-    headless: false,
-    slowMo: 5000,
-    devtools: true,
-  });
+  const browser = await chromium.launch({});
 
   await page.goto("https://netology.ru/");
   await page.getByRole("link", { name: "Войти" }).click();
